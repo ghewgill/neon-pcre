@@ -26,6 +26,9 @@ Ne_FUNC(Ne_search)
     int errorcode;
     PCRE2_SIZE erroroffset;
     pcre2_code *code = pcre2_compile(reinterpret_cast<PCRE2_SPTR>(pattern.data()), pattern.length(), 0, &errorcode, &erroroffset, NULL);
+    if (code == NULL) {
+        Ne_RAISE_EXCEPTION("SyntaxException", "compile error", errorcode);
+    }
     pcre2_match_data *md = pcre2_match_data_create_from_pattern(code, NULL);
     int r = pcre2_match(code, reinterpret_cast<PCRE2_SPTR>(subject.data()), subject.length(), 0, 0, md, NULL);
     if (r <= 0) {

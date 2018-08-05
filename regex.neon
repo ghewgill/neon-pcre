@@ -9,6 +9,8 @@ EXPORT Match
 
 EXPORT search
 
+EXPORT EXCEPTION SyntaxException
+
 %|
  |  Type: Group
  |
