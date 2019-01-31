@@ -10,8 +10,7 @@ END IF
 %= 16
 %= foobar
 
-print(strb(regex.search("asdf", "foobar", OUT m)))
-%= FALSE
+ASSERT NOT regex.search("asdf", "foobar", OUT m)
 
 _ := regex.search("(a|(z))(bc)", "abc", OUT m)
 ASSERT m[0].matched = TRUE
