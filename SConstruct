@@ -64,7 +64,7 @@ else:
         env.Append(CPPPATH=["pcre2-10.10/src"])
     conf.Finish()
 
-env.Append(CPPPATH=["../../src"])
+env.Append(CPPPATH=["../../common"])
 env.Append(LIBS=[libpcre])
 env.Depends("regex.cpp", libpcre) # Ensure that header files are created.
 env.SharedLibrary("neon_regex", "regex.cpp")
