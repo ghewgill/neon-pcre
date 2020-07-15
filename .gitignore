@@ -1,0 +1,12 @@
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+
+pcre2-10.10/
+bin/
+include/
+lib/
+share/
+
+libneon_regex.so
