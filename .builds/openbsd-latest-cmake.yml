@@ -1,0 +1,10 @@
+image: openbsd/latest
+packages:
+    - cmake
+sources:
+    - https://github.com/ghewgill/neon-regex
+tasks:
+    - build: |
+        cd neon-regex
+        cmake .
+        cmake --build .
