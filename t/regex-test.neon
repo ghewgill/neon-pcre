@@ -10,19 +10,19 @@ END IF
 #= 16
 #= foobar
 
-ASSERT NOT regex.search("asdf", "foobar", OUT m)
+TESTCASE NOT regex.search("asdf", "foobar", OUT m)
 
 _ := regex.search("(a|(z))(bc)", "abc", OUT m)
-ASSERT m[0].matched = TRUE
-ASSERT m[0].start = 0
-ASSERT m[0].end = 3
-ASSERT m[0].group = "abc"
-ASSERT m[1].matched = TRUE
-ASSERT m[1].start = 0
-ASSERT m[1].end = 1
-ASSERT m[1].group = "a"
-ASSERT m[2].matched = FALSE
-ASSERT m[3].matched = TRUE
-ASSERT m[3].start = 1
-ASSERT m[3].end = 3
-ASSERT m[3].group = "bc"
+TESTCASE m[0].matched = TRUE
+TESTCASE m[0].start = 0
+TESTCASE m[0].end = 3
+TESTCASE m[0].group = "abc"
+TESTCASE m[1].matched = TRUE
+TESTCASE m[1].start = 0
+TESTCASE m[1].end = 1
+TESTCASE m[1].group = "a"
+TESTCASE m[2].matched = FALSE
+TESTCASE m[3].matched = TRUE
+TESTCASE m[3].start = 1
+TESTCASE m[3].end = 3
+TESTCASE m[3].group = "bc"
