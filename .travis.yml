@@ -27,3 +27,9 @@ before_install:
   - if [[ "$WITH_PCRE_PACKAGE" == "1" ]]; then sudo apt install libpcre2-dev; fi
 script:
   - cmake . && cmake --build .
+  - cd ..
+  - git clone https://github.com/ghewgill/neon-lang
+  - ln -s ../../neon-regex neon-lang/lib/regex
+  - cd neon-lang
+  - cmake . && cmake --build .
+  - ctest -R regex
