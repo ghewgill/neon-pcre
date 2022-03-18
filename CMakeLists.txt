@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 cmake_policy(SET CMP0054 NEW)
-project(neon_regex)
+project(neon_pcre)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -87,5 +87,5 @@ else ()
     endif()
 endif()
 
-add_library(neon_regex SHARED regex.cpp)
-target_link_libraries(neon_regex ${PCRE_TARGET})
+add_library(neon_pcre SHARED pcre.cpp)
+target_link_libraries(neon_pcre ${PCRE_TARGET})

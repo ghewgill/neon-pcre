@@ -2,9 +2,9 @@ image: freebsd/latest
 packages:
     - cmake
 sources:
-    - https://github.com/ghewgill/neon-regex
+    - https://github.com/ghewgill/neon-pcre
 tasks:
     - build: |
-        cd neon-regex
+        cd neon-pcre
         cmake .
         cmake --build .

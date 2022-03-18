@@ -1,7 +1,7 @@
-IMPORT regex
+IMPORT pcre
 
-VAR m: regex.Match
-IF regex.search("fo+bar", "This is a foobar", OUT m) THEN
+VAR m: pcre.Match
+IF pcre.search("fo+bar", "This is a foobar", OUT m) THEN
     print("\(m[0].start)")
     print("\(m[0].end)")
     print(m[0].group)
@@ -10,9 +10,9 @@ END IF
 --= 16
 --= foobar
 
-TESTCASE NOT regex.search("asdf", "foobar", OUT m)
+TESTCASE NOT pcre.search("asdf", "foobar", OUT m)
 
-_ := regex.search("(a|(z))(bc)", "abc", OUT m)
+_ := pcre.search("(a|(z))(bc)", "abc", OUT m)
 TESTCASE m[0].matched = TRUE
 TESTCASE m[0].start = 0
 TESTCASE m[0].end = 3

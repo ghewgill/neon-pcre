@@ -1,4 +1,4 @@
-/*  File: regex
+/*  File: pcre
  *
  *  Functions for using regular expressions for text searching.
  */
